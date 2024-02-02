@@ -26,6 +26,6 @@ jobs:
           cat metrics.txt >> report.md
 
           echo "\n## Model Performance" >> report.md
-          echo "![Model Results](./model_results.png)" >> report.md
+          echo "![Model Results](./tutorial1/model_results.png)" >> report.md
           
           cml comment update report.md

@@ -27,5 +27,5 @@ jobs:
 
           echo "\n## Model Performance" >> report.md
 
-          cmd comment "![](model_results.png "Model Results")" update report.md
+          cml comment "![](model_results.png "Model Results")" update report.md
           cml comment update report.md

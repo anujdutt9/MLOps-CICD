@@ -4,8 +4,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     permissions:
-      id-token: write
-      contents: write
+      contents: read
       pull-requests: write
     steps:
       - uses: iterative/setup-cml@v1

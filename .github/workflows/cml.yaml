@@ -20,5 +20,4 @@ jobs:
           python tutorial1/model.py
           echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
-          cml publish metrics.txt --md >> report.md
-          cml send-comment report.md
+          cml comment create report.md

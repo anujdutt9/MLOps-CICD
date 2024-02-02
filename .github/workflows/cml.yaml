@@ -21,11 +21,7 @@ jobs:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           python tutorial1/model.py
-          
           echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
-
-          echo "\n## Model Performance" >> report.md
-
-          cml comment "![](./tutorial1/model_results.png "Model Results")" update report.md
-          cml comment update report.md
+          echo '![](./tutorial1/model_results.png "Model Results")' >> report.md
+          cml comment create report.md

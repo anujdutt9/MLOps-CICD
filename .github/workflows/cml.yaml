@@ -3,21 +3,21 @@ on: [push]
 jobs:
   run:
     runs-on: ubuntu-latest
-    container: docker://dvcorg/cml-py3:latest
+    container:
+      image: docker://dvcorg/cml-py3:latest
+      options: --user root
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
-      - uses: iterative/setup-cml@v1
-      - name: Display Python version
-        run: python -c "import sys; print(sys.version)"
+        with:
+          python-version: '3.10'
       - name: Train model
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           pip install -r tutorial1/requirements.txt
           python tutorial1/model.py
-
-          echo "## Model Metrcis" > report.md
+          
+          echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
-
           cml comment update report.md

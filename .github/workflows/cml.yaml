@@ -23,5 +23,5 @@ jobs:
           python tutorial1/model.py
           echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
-          echo '![](./tutorial1/model_results.png "Model Results")' >> report.md
+          echo '![Model Results](tutorial1/model_results.png "Model Results")' >> report.md
           cml comment create report.md

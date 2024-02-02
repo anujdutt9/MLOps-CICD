@@ -28,5 +28,5 @@ jobs:
           echo "\n## Model Performance"
           echo "Model Performance Metrics Plot"
 
-          cml publish ./odel_results.png --md >> report.md
+          cml comment update "![model_results](./model_results.png)" report.md
           cml comment update report.md

@@ -23,6 +23,5 @@ jobs:
           python tutorial1/model.py
           echo "## Model Metrics" > report.md
           cat metrics.txt >> report.md
-          echo "$PWD"
-          cml-publish model_results.png --md >> report.md
+          echo '![Model Results](./model_results.png "Model Results")' >> report.md
           cml comment create report.md
